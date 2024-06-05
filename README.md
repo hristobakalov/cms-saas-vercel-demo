@@ -13,7 +13,7 @@
 
 
 ## Introduction
-This repository contains the packages and applications that form the Optimizely CMS Demo Site.
+This repository contains the pawdadackages and applications that form the Optimizely CMS Demo Site.
 
 ## Getting started
 ### Requirements
