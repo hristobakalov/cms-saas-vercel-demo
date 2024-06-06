@@ -1,6 +1,6 @@
 "use client";
 
-import { Schema, useFragment } from '@gql'
+import { Schema, useFragment } from "@gql";
 import { type FunctionComponent } from "react";
 import Button from "../button-block";
 import Image from "next/image";
@@ -8,19 +8,45 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "@/components/partial/animatedText";
 
 type HomeHeroBlockComponentType = FunctionComponent<{
-  data: Schema.HomeHeroBlockDataFragment
-  inEditMode?: boolean
-}>
+  data: Schema.HomeHeroBlockDataFragment;
+  inEditMode?: boolean;
+}>;
 
-const HomeHero: HomeHeroBlockComponentType = ({ data: { homeHeroHeading: heading = "", homeHeroSubheading: subheading = "", homeHeroButton: button, leftImage, rightImage }, inEditMode }) => {
-  const leftImageUrlData = useFragment(Schema.LinkDataFragmentDoc, useFragment(Schema.ReferenceDataFragmentDoc, leftImage)?.url)
-  const rightImageUrlData = useFragment(Schema.LinkDataFragmentDoc, useFragment(Schema.ReferenceDataFragmentDoc, rightImage)?.url)
-  const leftImageUrl = leftImageUrlData ? new URL(leftImageUrlData.default ?? '/', leftImageUrlData.base ?? 'https://example.com').href : undefined
-  const rightImageUrl = rightImageUrlData ? new URL(rightImageUrlData.default ?? '/', rightImageUrlData.base ?? 'https://example.com').href : undefined
+const HomeHero: HomeHeroBlockComponentType = ({
+  data: {
+    homeHeroHeading: heading = "",
+    homeHeroSubheading: subheading = "",
+    homeHeroButton: button,
+    leftImage,
+    rightImage,
+  },
+  inEditMode,
+}) => {
+  const leftImageUrlData = useFragment(
+    Schema.LinkDataFragmentDoc,
+    useFragment(Schema.ReferenceDataFragmentDoc, leftImage)?.url
+  );
+  const rightImageUrlData = useFragment(
+    Schema.LinkDataFragmentDoc,
+    useFragment(Schema.ReferenceDataFragmentDoc, rightImage)?.url
+  );
+  const leftImageUrl = leftImageUrlData
+    ? new URL(
+        leftImageUrlData.default ?? "/",
+        leftImageUrlData.base ?? "https://example.com"
+      ).href
+    : undefined;
+  const rightImageUrl = rightImageUrlData
+    ? new URL(
+        rightImageUrlData.default ?? "/",
+        rightImageUrlData.base ?? "https://example.com"
+      ).href
+    : undefined;
 
   return (
     <section className="py-20 lg:py-40 w-full overflow-hidden relative outer-padding">
       <div className="container mx-auto text-center flex flex-col items-center max-w-[580px] relative z-10 pt-[40px]">
+        <div>Hello world</div>
         {leftImageUrl && (
           <motion.div
             initial={{ opacity: 0, clipPath: "circle(0% at 100%)" }}
