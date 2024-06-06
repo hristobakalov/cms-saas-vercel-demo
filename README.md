@@ -1,4 +1,4 @@
- test# Optimizely CMS Demo Site <!-- omit in toc -->
+123 test# Optimizely CMS Demo Site <!-- omit in toc -->
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
@@ -13,7 +13,7 @@
 
 
 ## Introduction
-This repository contains the packages and applications that form the Optimizely CMS Demo Site.
+This repository contains the pawdadackages and applications that form the Optimizely CMS Demo Site.
 
 ## Getting started
 ### Requirements
