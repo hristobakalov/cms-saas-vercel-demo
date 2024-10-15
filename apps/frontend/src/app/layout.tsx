@@ -14,6 +14,7 @@ import { Scripts } from "@remkoj/optimizely-one-nextjs/server";
 import GoogleAnalytics from "@/components/integrations/google-analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientComponent from "@/components/cms/element/ParagraphElement/personalizedComponent";
+import { Suspense } from "react";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -73,7 +74,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex min-h-screen flex-col justify-between">
             <OptimizelyOneProvider value={{ debug: true }}>
               <Header />
-              <ClientComponent />
+              <Suspense fallback={<div>Loading...</div>}>
+                <ClientComponent />
+              </Suspense>
               <main
                 className="grow bg-[#10141c] text-[#ffffff]"
                 suppressHydrationWarning
