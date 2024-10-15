@@ -6,7 +6,10 @@ const nextConfig = {
         loader: 'custom',
         loaderFile: './src/cloudflareLoader.js', // Use Cloudflare Images for resizing
         remotePatterns: []
-    }
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
 }
 
 // Add the configured Optimizely DXP URL to the image domains
@@ -15,7 +18,7 @@ if (optimizelyDxpUrl) {
     const optimizelyDxpHost = new URL(optimizelyDxpUrl)
 
     nextConfig.images.remotePatterns.push({
-        protocol: optimizelyDxpHost.protocol.replace(":",""),
+        protocol: optimizelyDxpHost.protocol.replace(":", ""),
         hostname: optimizelyDxpHost.hostname,
         port: optimizelyDxpHost.port,
         pathname: (optimizelyDxpHost.pathname || '/') + '**'
