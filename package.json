@@ -30,5 +30,10 @@
     "update-sdks": "yarn sdks vscode",
     "update-deps": "yarn upgrade-interactive && yarn dedupe && yarn sdks vscode",
     "update-yarn": "yarn set version stable && yarn install && yarn sdks vscode"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "graphql": "^16.9.0",
+    "mongodb": "^6.9.0"
   }
 }

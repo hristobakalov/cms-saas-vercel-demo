@@ -17,9 +17,9 @@ export const HeaderContext = createContext<HeaderContextType>({
 });
 
 type ClientHeaderProps = {
-  menuItems: Array<GraphQL.MegaMenuItemFragment>
-  utilityItems: Array<GraphQL.MenuItemFragment>
-}
+  menuItems: Array<GraphQL.MegaMenuItemFragment>;
+  utilityItems: Array<GraphQL.MenuItemFragment>;
+};
 
 /**
  * Renders the Header component with a specific locale.
@@ -27,7 +27,10 @@ type ClientHeaderProps = {
  * @param {any} locale - the locale to render the header with
  * @return {JSX.Element} the rendered Header component
  */
-export const Header : FunctionComponent<ClientHeaderProps> = ({ menuItems, utilityItems }) => {
+export const Header: FunctionComponent<ClientHeaderProps> = ({
+  menuItems,
+  utilityItems,
+}) => {
   const logoRef = useRef<HTMLDivElement>(null);
   const secondaryMenuRef = useRef<HTMLUListElement>(null);
   const [currentMenu, setCurrentMenu] = useState("");
@@ -73,11 +76,9 @@ export const Header : FunctionComponent<ClientHeaderProps> = ({ menuItems, utili
         onMouseEnter={handleMouseEnter}
         onBlur={handleFocusLeave}
       >
-        <div className="py-8 container mx-auto flex items-center w-full justify-between lg:justify-normal">
-          <Logo ref={logoRef} />
-
+        <div className="py-8 container mx-auto flex items-center w-full justify-between">
+          {/* Mobile menu button (left side) */}
           <div className="lg:hidden">
-            
             <button
               className="btn btn--secondary"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -86,17 +87,29 @@ export const Header : FunctionComponent<ClientHeaderProps> = ({ menuItems, utili
                 {mobileMenuOpen ? "Close" : "Menu"}
               </div>
             </button>
-            <MobileMenu />
           </div>
 
-          <div className="hidden justify-between grow lg:flex">
+          {/* Centered logo */}
+          <div className="flex-grow flex justify-center">
+            <Logo ref={logoRef} />
+          </div>
+
+          {/* Empty div for right side (to balance the layout) */}
+          <div className="lg:hidden invisible">
+            {/* This empty div helps maintain the layout balance */}
+          </div>
+
+          <MobileMenu />
+
+          {/* Commented out desktop menu */}
+          {/* <div className="hidden justify-between grow lg:flex">
             <MainMenu />
             <SecondaryMenu ref={secondaryMenuRef} />
-          </div>
+          </div> */}
         </div>
       </header>
     </HeaderContext.Provider>
   );
-}
+};
 
-export default Header
+export default Header;

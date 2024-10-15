@@ -1,0 +1,23 @@
+{
+  "key": "DividerElement",
+  "displayName": "Divider",
+  "description": "",
+  "baseType": "element",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod"
+  ],
+  "usage": [
+    "property",
+    "instance"
+  ],
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "created": "2024-10-15T07:15:19.7795819+00:00",
+  "lastModified": "2024-10-15T07:15:19.7795819+00:00",
+  "lastModifiedBy": "hristo.bakalov@optimizely.com",
+  "properties": {}
+}

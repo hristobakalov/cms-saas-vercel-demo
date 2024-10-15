@@ -7,7 +7,7 @@ const Logo = forwardRef<HTMLDivElement>((props, ref) => {
     <div className="flex align-middle" ref={ref}>
       <Link href="/" className="mr-[28px]">
         <Image
-          src="/assets/moseybank-logo.svg"
+          src="/assets/mosey-logo.png"
           alt="Mosey Bank Logo"
           width={200}
           height={36}

@@ -3,6 +3,7 @@ import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import ArticleListElementComponent from "./ArticleListElement";
 import ContentRecsElementComponent from "./ContentRecsElement";
 import CTAElementComponent from "./CTAElement";
+import DividerElementComponent from "./DividerElement";
 import HeadingElementComponent from "./HeadingElement";
 import ImageElementComponent from "./ImageElement";
 import ParagraphElementComponent from "./ParagraphElement";
@@ -21,6 +22,10 @@ export const elementDictionary : ComponentTypeDictionary = [
     { 
         type: "CTAElement", 
         component: CTAElementComponent 
+    },
+    { 
+        type: "DividerElement", 
+        component: DividerElementComponent 
     },
     { 
         type: "HeadingElement", 

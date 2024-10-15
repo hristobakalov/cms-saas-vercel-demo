@@ -1,0 +1,5 @@
+fragment DividerElementData on DividerElement {
+  divider: _metadata {
+    key
+  }
+}

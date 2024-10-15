@@ -74,6 +74,13 @@ export const ContentRecsElementDataFragmentDoc = /*#__PURE__*/ gql`
   ElementRecommendationCount
 }
     `;
+export const DividerElementDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment DividerElementData on DividerElement {
+  divider: _metadata {
+    key
+  }
+}
+    `;
 export const HeadingElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment HeadingElementData on HeadingElement {
   headingText
@@ -113,6 +120,7 @@ export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
   ...ArticleListElementData
   ...CTAElementData
   ...ContentRecsElementData
+  ...DividerElementData
   ...HeadingElementData
   ...ImageElementData
   ...ParagraphElementData
@@ -565,6 +573,7 @@ ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${ContentRecsElementDataFragmentDoc}
+${DividerElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
@@ -601,6 +610,7 @@ ${IElementDataFragmentDoc}
 ${ArticleListElementDataFragmentDoc}
 ${CTAElementDataFragmentDoc}
 ${ContentRecsElementDataFragmentDoc}
+${DividerElementDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}

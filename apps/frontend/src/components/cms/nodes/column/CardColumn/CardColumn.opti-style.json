@@ -55,6 +55,10 @@
         "white": {
           "displayName": "White",
           "sortOrder": 10
+        },
+        "grey": {
+          "displayName": "Grey",
+          "sortOrder": 80
         }
       }
     }

@@ -41,6 +41,21 @@
           "sortOrder": 10
         }
       }
+    },
+    "personalize": {
+      "displayName": "Personalize",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "cjam": {
+          "displayName": "CJAM personalization",
+          "sortOrder": 20
+        }
+      }
     }
   }
 }
