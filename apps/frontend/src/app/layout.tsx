@@ -71,6 +71,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Body
           className={`${figtree.className} bg-ghost-white dark:bg-vulcan dark:text-white overflow-x-hidden`}
         >
+          <div className="py-2 bg-[#0037ff] text-white w-screen flex items-center justify-center text-center">
+            <div>
+              Don't miss out during morning break!
+              <br />
+              10:15 - 10:45 "Avoiding KPI tunnel vision for optimal business
+              growth"
+            </div>
+          </div>
           <div className="flex min-h-screen flex-col justify-between">
             <OptimizelyOneProvider value={{ debug: true }}>
               <Header />

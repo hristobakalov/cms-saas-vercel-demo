@@ -49,27 +49,36 @@ const ClientComponent = () => {
         if (data && typeof data === "object" && !Array.isArray(data)) {
           setClient(data);
 
-          // Send data to Optimizely
-          // Send data to Optimizely
           //opti.getService("experimentation")?.trackEvent("user", {});
           window.optimizely = window.optimizely || [];
+
           window.optimizely.push({
             type: "user",
             attributes: {
               company: data.company,
               industry: data.industry,
-              currentProducts: data.currentProducts.join(", "),
+              currentProducts: data.currentProducts,
               interest: data.interest,
             },
           });
+
           window.optimizely.push({
             type: "activate",
           });
         } else {
+          window.optimizely.push({
+            type: "user",
+            attributes: {
+              company: "Dear Customer",
+              industry: "",
+              currentProducts: "",
+              interest: "",
+            },
+          });
           setError("Unexpected data format received");
         }
       } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred");
+        console.log("error ", err);
       } finally {
         setLoading(false);
       }
