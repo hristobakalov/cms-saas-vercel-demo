@@ -119,17 +119,7 @@ export default function Footer({
 }: FooterProps) {
   return (
     <footer className="bg-vulcan py-16 lg:py-32 outer-padding">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 text-white">
-        {footerItems.map((footerItem) => (
-          <FooterColumn
-            key={"footer-column" + footerItem.title}
-            dict={dict}
-            locales={locales}
-            locale={locale}
-            {...footerItem}
-          />
-        ))}
-      </div>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 text-white"></div>
       <div className="container mx-auto grid text-white mt-16 lg:mt-32 lg:text-center lg:justify-center">
         <div className="lg:justify-center flex mb-16">
           <Image
