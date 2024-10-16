@@ -59,9 +59,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             style={{ transform: "rotate(180deg)" }}
             className={`${
-              currentIndex === itemCount - 2
-                ? "text-mischka dark:text-light-grey"
-                : "w-12 h-12"
+              currentIndex === itemCount - 2 ? "w-12 h-12" : "w-12 h-12"
             }`}
           >
             <g id="Lager_1-2" data-name="Lager_1">
@@ -94,9 +92,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={`${
-              currentIndex === itemCount - 2
-                ? "text-mischka dark:text-light-grey"
-                : "w-12 h-12"
+              currentIndex === itemCount - 2 ? "w-12 h-12" : "w-12 h-12"
             }`}
           >
             <g id="Lager_1-2" data-name="Lager_1">

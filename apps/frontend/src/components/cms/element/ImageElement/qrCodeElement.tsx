@@ -11,11 +11,13 @@ const QRCodeElement: React.FC = () => {
   }, []);
 
   return (
-    <QRCodeSVG
-      value={url}
-      size={256} // Adjust size as needed
-      level="H" // Error correction level
-    />
+    <div className="flex justify-center items-center">
+      <QRCodeSVG
+        value={url}
+        size={256} // Adjust size as needed
+        level="H" // Error correction level
+      />
+    </div>
   );
 };
 
