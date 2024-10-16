@@ -1,22 +1,27 @@
 "use client";
 
-import React, { useState, useEffect, type FunctionComponent, type PropsWithChildren } from "react";
+import React, {
+  useState,
+  useEffect,
+  type FunctionComponent,
+  type PropsWithChildren,
+} from "react";
 import { motion } from "framer-motion";
 import { useWindowWidth } from "@react-hook/window-size/throttled";
 
 export type CarouselProps = PropsWithChildren<{
-  itemCount: number
-  className?: string
-}>
+  itemCount: number;
+  className?: string;
+}>;
 
 export const Carousel: FunctionComponent<CarouselProps> = ({
   itemCount,
   children,
-  className
+  className,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const windowWidth = useWindowWidth({fps: 2, initialWidth: 480});
-  const [itemWidth, setItemWidth] = useState(50)
+  const windowWidth = useWindowWidth({ fps: 2, initialWidth: 480 });
+  const [itemWidth, setItemWidth] = useState(50);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex === -1 ? -1 : prevIndex - 1));
@@ -29,22 +34,54 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
   };
 
   useEffect(() => {
-    setItemWidth(windowWidth <= 900 ? 80 : 50)
-  }, [windowWidth])
+    setItemWidth(windowWidth <= 900 ? 80 : 50);
+  }, [windowWidth]);
 
   //console.log(windowWidth)
   //const itemWidth = windowWidth <= 900 ? 80 : 50
 
   return (
-    <div className={`${ className ? className + ' ': '' }relative w-full my-24 flex flex-col carousel`}>
-      <section role="navigation" className="flex justify-center gap-10 mt-16 order-last" >
+    <div
+      className={`${
+        className ? className + " " : ""
+      }relative w-full my-24 flex flex-col carousel`}
+    >
+      <section
+        role="navigation"
+        className="flex justify-center gap-10 mt-16 order-last"
+      >
         <button onClick={handlePrev}>
-          <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(180deg)" }} className={ currentIndex === -1 ? "text-mischka dark:text-ghost-white" : "text-vulcan dark:text-light-grey" }>
-            <g clipPath="url(#clip0_5_4814)">
-              <path id="Vector" fillRule="evenodd" clipRule="evenodd" d="M48 24.4104C48 30.7756 45.4714 36.8801 40.9706 41.381C36.4697 45.8818 30.3652 48.4104 24 48.4104C17.6348 48.4104 11.5303 45.8818 7.02944 41.381C2.52856 36.8801 0 30.7756 0 24.4104C0 18.0452 2.52856 11.9407 7.02944 7.43984C11.5303 2.93896 17.6348 0.4104 24 0.4104C30.3652 0.4104 36.4697 2.93896 40.9706 7.43984C45.4714 11.9407 48 18.0452 48 24.4104ZM13.5 25.9104C13.1022 25.9104 12.7206 25.7524 12.4393 25.4711C12.158 25.1898 12 24.8082 12 24.4104C12 24.0126 12.158 23.631 12.4393 23.3497C12.7206 23.0684 13.1022 22.9104 13.5 22.9104H30.879L24.438 16.4724C24.1563 16.1907 23.9981 15.8087 23.9981 15.4104C23.9981 15.0121 24.1563 14.6301 24.438 14.3484C24.7197 14.0667 25.1017 13.9085 25.5 13.9085C25.8983 13.9085 26.2803 14.0667 26.562 14.3484L35.562 23.3484C35.7017 23.4877 35.8125 23.6533 35.8881 23.8355C35.9638 24.0177 36.0027 24.2131 36.0027 24.4104C36.0027 24.6077 35.9638 24.8031 35.8881 24.9853C35.8125 25.1675 35.7017 25.3331 35.562 25.4724L26.562 34.4724C26.2803 34.7541 25.8983 34.9123 25.5 34.9123C25.1017 34.9123 24.7197 34.7541 24.438 34.4724C24.1563 34.1907 23.9981 33.8087 23.9981 33.4104C23.9981 33.0121 24.1563 32.6301 24.438 32.3484L30.879 25.9104H13.5Z" fill="currentColor" />
+          <svg
+            width="48"
+            height="49"
+            viewBox="0 0 150 150"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ transform: "rotate(180deg)" }}
+            className={`${
+              currentIndex === itemCount - 2
+                ? "text-mischka dark:text-light-grey"
+                : "w-12 h-12"
+            }`}
+          >
+            <g id="Lager_1-2" data-name="Lager_1">
+              <path
+                className="cls-1"
+                d="M150,75C150,33.58,116.35,0,74.83,0,35.53,0,3.32,30.12,0,68.48h81.17c-10.9-9.57-17.82-23.54-17.82-39.13h13.07c0,21.58,17.59,39.13,39.22,39.13v13.04c-21.63,0-39.22,17.55-39.22,39.13h-13.07c0-15.57,6.87-29.56,17.74-39.13H0c3.32,38.36,35.53,68.48,74.83,68.48,41.51,0,75.17-33.58,75.17-75Z"
+                fill="currentColor"
+              />
             </g>
             <defs>
-              <clipPath id="clip0_5_4815"><rect width="48" height="48" fill="white" transform="translate(0 0.4104)" /></clipPath>
+              <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#080837", stopOpacity: 1 }}
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#0136f5", stopOpacity: 1 }}
+                />
+              </linearGradient>
             </defs>
           </svg>
           <span className="sr-only">Previous Slide</span>
@@ -53,31 +90,33 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
           <svg
             width="48"
             height="49"
-            viewBox="0 0 48 49"
+            viewBox="0 0 150 150"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={`${
-              currentIndex === itemCount - 2 ? "text-mischka dark:text-light-grey" : "text-vulcan dark:text-ghost-white"
+              currentIndex === itemCount - 2
+                ? "text-mischka dark:text-light-grey"
+                : "w-12 h-12"
             }`}
           >
-            <g clipPath="url(#clip0_5_4814)">
+            <g id="Lager_1-2" data-name="Lager_1">
               <path
-                id="Vector"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M48 24.4104C48 30.7756 45.4714 36.8801 40.9706 41.381C36.4697 45.8818 30.3652 48.4104 24 48.4104C17.6348 48.4104 11.5303 45.8818 7.02944 41.381C2.52856 36.8801 0 30.7756 0 24.4104C0 18.0452 2.52856 11.9407 7.02944 7.43984C11.5303 2.93896 17.6348 0.4104 24 0.4104C30.3652 0.4104 36.4697 2.93896 40.9706 7.43984C45.4714 11.9407 48 18.0452 48 24.4104ZM13.5 25.9104C13.1022 25.9104 12.7206 25.7524 12.4393 25.4711C12.158 25.1898 12 24.8082 12 24.4104C12 24.0126 12.158 23.631 12.4393 23.3497C12.7206 23.0684 13.1022 22.9104 13.5 22.9104H30.879L24.438 16.4724C24.1563 16.1907 23.9981 15.8087 23.9981 15.4104C23.9981 15.0121 24.1563 14.6301 24.438 14.3484C24.7197 14.0667 25.1017 13.9085 25.5 13.9085C25.8983 13.9085 26.2803 14.0667 26.562 14.3484L35.562 23.3484C35.7017 23.4877 35.8125 23.6533 35.8881 23.8355C35.9638 24.0177 36.0027 24.2131 36.0027 24.4104C36.0027 24.6077 35.9638 24.8031 35.8881 24.9853C35.8125 25.1675 35.7017 25.3331 35.562 25.4724L26.562 34.4724C26.2803 34.7541 25.8983 34.9123 25.5 34.9123C25.1017 34.9123 24.7197 34.7541 24.438 34.4724C24.1563 34.1907 23.9981 33.8087 23.9981 33.4104C23.9981 33.0121 24.1563 32.6301 24.438 32.3484L30.879 25.9104H13.5Z"
+                className="cls-1"
+                d="M150,75C150,33.58,116.35,0,74.83,0,35.53,0,3.32,30.12,0,68.48h81.17c-10.9-9.57-17.82-23.54-17.82-39.13h13.07c0,21.58,17.59,39.13,39.22,39.13v13.04c-21.63,0-39.22,17.55-39.22,39.13h-13.07c0-15.57,6.87-29.56,17.74-39.13H0c3.32,38.36,35.53,68.48,74.83,68.48,41.51,0,75.17-33.58,75.17-75Z"
                 fill="currentColor"
               />
             </g>
             <defs>
-              <clipPath id="clip0_5_4815">
-                <rect
-                  width="48"
-                  height="48"
-                  fill="white"
-                  transform="translate(0 0.4104)"
+              <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#080837", stopOpacity: 1 }}
                 />
-              </clipPath>
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#0136f5", stopOpacity: 1 }}
+                />
+              </linearGradient>
             </defs>
           </svg>
 
@@ -90,7 +129,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
           //@ts-expect-error Typescript doesn't know about the variables in use
           "--item-width": `${itemWidth}vw`,
           width: `calc(${itemCount * itemWidth}vw + ${(itemCount - 1) * 30}px)`,
-          x: `${ (0.5 * itemWidth) - ((currentIndex + 2)*itemWidth) }vw`,
+          x: `${0.5 * itemWidth - (currentIndex + 2) * itemWidth}vw`,
           transition: "0.5s",
         }}
       >

@@ -76,7 +76,7 @@ export const Header: FunctionComponent<ClientHeaderProps> = ({
         onMouseEnter={handleMouseEnter}
         onBlur={handleFocusLeave}
       >
-        <div className="py-8 container mx-auto flex items-center w-full justify-between">
+        <div className="py-2 container mx-auto flex items-center w-full justify-between">
           {/* Mobile menu button (left side) */}
           <div className="lg:hidden">
             <button

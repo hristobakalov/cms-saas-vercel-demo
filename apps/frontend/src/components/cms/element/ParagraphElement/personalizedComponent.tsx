@@ -30,7 +30,7 @@ const ClientComponent = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSpinnerLoading(false);
-    }, 500); // 1 second delay
+    }, 1000); // 1 second delay
 
     const fetchData = async () => {
       if (!companyName) return;

@@ -59,6 +59,10 @@
         "grey": {
           "displayName": "Grey",
           "sortOrder": 80
+        },
+        "blue_gradient": {
+          "displayName": "Blue gradient",
+          "sortOrder": 90
         }
       }
     }
