@@ -77,8 +77,7 @@ export const Header: FunctionComponent<ClientHeaderProps> = ({
         onBlur={handleFocusLeave}
       >
         <div className="py-2 container mx-auto flex items-center w-full justify-between">
-          {/* Mobile menu button (left side) */}
-          <div className="lg:hidden">
+          {/*<div className="lg:hidden">
             <button
               className="btn btn--secondary"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -87,7 +86,7 @@ export const Header: FunctionComponent<ClientHeaderProps> = ({
                 {mobileMenuOpen ? "Close" : "Menu"}
               </div>
             </button>
-          </div>
+          </div>*/}
 
           {/* Centered logo */}
           <div className="flex-grow flex justify-center">
