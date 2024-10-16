@@ -1,0 +1,13 @@
+{
+  "key": "QRCodeElement",
+  "displayName": "QR Code",
+  "contentType": "ImageElement",
+  "isDefault": false,
+  "created": "2024-06-27T14:20:51.0180859+00:00",
+  "createdBy": "cli-test",
+  "lastModified": "2024-06-27T14:21:02.1659116+00:00",
+  "lastModifiedBy": "cli-test",
+  "settings": {
+    
+  }
+}
