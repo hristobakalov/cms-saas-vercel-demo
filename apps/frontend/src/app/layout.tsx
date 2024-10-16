@@ -63,7 +63,7 @@ export type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   const ga_id = EnvTools.readValue("GA_TRACKING_ID");
   return (
-    <html>
+    <html style={{ overflowX: "hidden" }}>
       <head>
         <Scripts.Header experimentationAllowOverride={false} />
       </head>
